@@ -23,6 +23,10 @@ AC_C_BIGENDIAN([], [], [AC_MSG_ERROR([could not determine endianness])])
 # Checks for header files.
 AC_CHECK_HEADERS([inttypes.h limits.h stddef.h stdint.h stdlib.h string.h wchar.h])
 
+AC_ADD_CCFLAG([-flto])
+AC_ADD_LDFLAG([-flto])
+AC_ADD_LIB([-lm])
+
 AC_INCORPORATE_LIBPNG([1.2.0], [HAVE_LIBPNG], [no])
 AC_INCORPORATE_OPENGL([HAVE_OPENGL], [yes])
 AC_INCORPORATE_SDL([1.2.7], [HAVE_SDL], [yes])
